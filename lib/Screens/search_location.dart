@@ -39,7 +39,7 @@ class _SearchLocationState extends State<SearchLocation> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
+                    color: Colors.tealAccent,
                   ),
                 ),
                 ListTile(
