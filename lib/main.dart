@@ -21,21 +21,33 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-        seconds: 7,
-        navigateAfterSeconds: new SearchLocation(),
-        title: new Text(
-          'Feety',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 40.0, fontStyle:FontStyle.italic ),
-        ),
-        image: new Image.asset('assets/images/circle.jpg', fit: BoxFit.fill),
-        backgroundColor: Colors.teal,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Cruising through!"),
-        loaderColor: Colors.tealAccent,
-        loadingText: Text('Feeding the Wanderlust',
-        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 10.0, fontStyle:FontStyle.italic ),
-         ),);
+      seconds: 5,
+      navigateAfterSeconds: new SearchLocation(),
+      title: new Text(
+        'Feety',
+        style: new TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 40.0,
+            fontStyle: FontStyle.italic),
+      ),
+      image: Image.asset(
+        'assets/images/budapest2.jpg',
+        height: MediaQuery.of(context).size.height*2.5,
+        width: MediaQuery.of(context).size.width*2.5,
+      ),
+      backgroundColor: Colors.teal,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: () => print("Cruising through!"),
+      loaderColor: Colors.tealAccent,
+      loadingText: Text(
+        'Feeding the Wanderlust',
+        style: new TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 10.0,
+            fontStyle: FontStyle.italic),
+      ),
+    );
   }
 }
 
@@ -46,7 +58,7 @@ class _MyAppState extends State<MyApp> {
 //       appBar: new AppBar(
 //           title: new Text("Feety"), automaticallyImplyLeading: false),
 //       body: SplashBanner(),
-      //       routes: {
+//       routes: {
 //         'SplashScreen': (context) => SplashScreen(),
 //         'SearchLocation': (context) => SearchLocation(),
 //         'Favourites': (context) => FavouriteLocations(),
