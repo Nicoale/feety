@@ -9,7 +9,9 @@ class _FavouriteLocationsState extends State<FavouriteLocations> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Text('Favourite locations')
+      appBar: AppBar(
+        title:Text('Favourites')
+        )
     );
   }
 }
