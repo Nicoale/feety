@@ -10,7 +10,8 @@ class _FavouriteLocationsState extends State<FavouriteLocations> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text('Favourites')
+        title:Text('Favourites'),
+        backgroundColor: Colors.black,
         )
     );
   }

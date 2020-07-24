@@ -1,9 +1,9 @@
 // alerts user they are offline
 //Remember to link the try again so it is refresh-able
-//add an icon
+//
 
-import 'package:feety/size_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 
 class OfflineWidget extends StatelessWidget {
   @override
@@ -13,21 +13,48 @@ class OfflineWidget extends StatelessWidget {
         backgroundColor: Colors.black,
         title: Text('You are Offline'),
       ),
-      body: Container(
-        child: Container(
-          child: Text(
-              'Oops! No internet connection found.Check your connection or try again.',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w400)),
+      body: OfflineBuilder(
+        connectivityBuilder: (
+          BuildContext context,
+          ConnectivityResult connectivity,
+          Widget child,
+        ) {
+          final bool connected = connectivity != ConnectivityResult.none;
+          return new Stack(
+            fit: StackFit.expand,
+            children: [
+              Positioned(
+                height: 24.0,
+                left: 0.0,
+                right: 0.0,
+                child: Container(
+                  color: connected ? Color(0xFF00EE44) : Color(0xFFEE4400),
+                  child: Center(
+                    child: Text("${connected ? 'ONLINE' : 'OFFLINE'}"),
+                  ),
+                ),
+              ),
+              Center(
+                child: new Text(
+                  'Yay!',
+                ),
+              ),
+            ],
+          );
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'There are no bottons to push :)',
+            ),
+            new Text(
+              'Just turn off your internet.',
+            ),
+          ],
         ),
-        height: displayHeight(context) -
-            MediaQuery.of(context).padding.top -
-            kToolbarHeight,
-        margin: EdgeInsets.only(top: 250, right: 30, left: 20),
       ),
     );
   }
 }
+//final

@@ -10,7 +10,8 @@ class _AboutWidgetState extends State<AboutWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text('About App')
+        title:Text('About App'),
+        backgroundColor: Colors.black,
         )
     );
   }

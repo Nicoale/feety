@@ -5,7 +5,7 @@ class LegalWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text('Privacy & Legal Information')
+        title:Text('Privacy & Legal Information'),backgroundColor: Colors.black,
         )
     );
   }

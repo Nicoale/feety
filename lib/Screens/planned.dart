@@ -10,7 +10,13 @@ class PlannedListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+      appBar:AppBar( 
+        title: Text('Planned Visits'),
+        backgroundColor: Colors.black,
+      ),
+
+
+
         body: ListView(
           children: <Widget>[
             LocationTwo(
@@ -25,9 +31,15 @@ class PlannedListWidget extends StatelessWidget {
               publishDate: 'Dec 28',
               readDuration: '5 mins',
             ),
+
+
+
             SizedBox(
               height: 20,
             ),
+
+
+
             LocationTwo(
               thumbnail: Container(
                 height: 30,
@@ -41,6 +53,19 @@ class PlannedListWidget extends StatelessWidget {
             ),
             SizedBox(
               height: 20,
+            ),
+
+            
+            LocationTwo(
+              thumbnail: Container(
+                height: 30,
+                decoration: const BoxDecoration(color: Colors.blueAccent),
+              ),
+              title: 'Flutter 1.2 Release - Continual updates to the framework',
+              subtitle: 'Flutter once again improves and makes updates.',
+              author: 'Flutter',
+              publishDate: 'Feb 26',
+              readDuration: '12 mins',
             ),
           ],
         ));

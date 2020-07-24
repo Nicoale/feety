@@ -13,7 +13,8 @@ class _ProfileEntryWidgetState extends State<ProfileEntryWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Profile')
+        title: Text('Your Profile'),
+        backgroundColor: Colors.black,
       ),
       body: Text('This is my profile'),
     );

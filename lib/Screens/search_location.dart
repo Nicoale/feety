@@ -2,6 +2,7 @@ import 'package:feety/Screens/about.dart';
 import 'package:feety/Screens/favourites.dart';
 import 'package:feety/Screens/legal.dart';
 import 'package:feety/Screens/offline.dart';
+import 'package:feety/Screens/planned.dart';
 import 'package:feety/Screens/settings.dart';
 import 'package:feety/size_helpers.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _SearchLocationState extends State<SearchLocation> {
     return Scaffold(
       appBar: AppBar(
         title: Text(appTitle),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
       ),
       body: ListView(children: <Widget>[
         Container(
@@ -158,6 +159,19 @@ class _SearchLocationState extends State<SearchLocation> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => FavouriteLocations()));
+                },
+              ),
+              ListTile(
+                title: Text('Planned Visits',
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
+                leading: Icon(Icons.calendar_today, color: Colors.white),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PlannedListWidget()));
                 },
               ),
               ListTile(
