@@ -1,7 +1,9 @@
 import 'package:feety/Screens/about.dart';
 import 'package:feety/Screens/favourites.dart';
 import 'package:feety/Screens/legal.dart';
+import 'package:feety/Screens/offline.dart';
 import 'package:feety/Screens/settings.dart';
+import 'package:feety/size_helpers.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -17,10 +19,10 @@ class _SearchLocationState extends State<SearchLocation> {
   Widget build(BuildContext context) {
     final appTitle = 'Feety';
     return Scaffold(
-      appBar:AppBar(
-        title:Text(appTitle),
+      appBar: AppBar(
+        title: Text(appTitle),
         backgroundColor: Colors.transparent,
-        ),      
+      ),
       body: ListView(children: <Widget>[
         Container(
           height: 50,
@@ -38,9 +40,12 @@ class _SearchLocationState extends State<SearchLocation> {
                 prefixIcon:
                     Icon(Icons.search, color: Colors.black, size: 24.0)),
           ),
-        ), SizedBox(height:5),
+        ),
+        SizedBox(height: 5),
         Container(
-          height: 200,
+          height: displayHeight(context) -
+              MediaQuery.of(context).padding.top -
+              kToolbarHeight,
           child: ListView(
             children: <Widget>[
               Text(
@@ -52,24 +57,54 @@ class _SearchLocationState extends State<SearchLocation> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Container(
-                    width: 160.0,height: 190,
+                    width: displayWidth(context) * 0.25,
+                    height: displayHeight(context),
                     color: Colors.red,
+                    child: Text(
+                      'One',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: displayWidth(context) * 0.03),
+                    ),
                   ),
                   Container(
-                    width: 160.0,height: 190,
+                    width: displayWidth(context) * 0.25,
+                    height: displayHeight(context),
                     color: Colors.blue,
+                    child: Text(
+                      'Two',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: displayWidth(context) * 0.03),
+                    ),
                   ),
                   Container(
-                    width: 160.0,height: 190,
+                    width: displayWidth(context) * 0.25,
+                    height: displayHeight(context),
                     color: Colors.green,
+                    child: Text(
+                      'THree',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: displayWidth(context) * 0.03),
+                    ),
                   ),
                   Container(
-                    width: 160.0,height: 190,
+                    width: displayWidth(context) * 0.25,
+                    height: displayHeight(context),
                     color: Colors.yellow,
+                    child: Text(
+                      'Four',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: displayWidth(context) * 0.03),
+                    ),
                   ),
                   Container(
-                    width: 160.0,height: 190,
+                    width: displayWidth(context) * 0.25,
+                    height: displayHeight(context) * 0.25,
                     color: Colors.orange,
+                    child: Text(
+                      'Five',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: displayWidth(context) * 0.03),
+                    ),
                   ),
                 ],
               )
@@ -119,8 +154,10 @@ class _SearchLocationState extends State<SearchLocation> {
                     )),
                 leading: Icon(Icons.favorite, color: Colors.white),
                 onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => FavouriteLocations()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FavouriteLocations()));
                 },
               ),
               ListTile(
@@ -130,8 +167,10 @@ class _SearchLocationState extends State<SearchLocation> {
                     )),
                 leading: Icon(Icons.settings, color: Colors.white),
                 onTap: () {
-                   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SettingsWidget()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SettingsWidget()));
                 },
               ),
               ListTile(
@@ -142,7 +181,7 @@ class _SearchLocationState extends State<SearchLocation> {
                 leading: Icon(Icons.contact_phone, color: Colors.white),
                 onTap: () {
                   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AboutWidget()));
+                      MaterialPageRoute(builder: (context) => AboutWidget()));
                 },
               ),
               ListTile(
@@ -153,9 +192,20 @@ class _SearchLocationState extends State<SearchLocation> {
                 leading: Icon(Icons.mail, color: Colors.white),
                 onTap: () {
                   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LegalWidget()));
+                      MaterialPageRoute(builder: (context) => LegalWidget()));
                 },
               ),
+                           ListTile(
+                title: Text('Offline',
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
+                leading: Icon(Icons.network_wifi, color: Colors.white),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => OfflineWidget()));
+                },
+              )
             ],
           ),
         ),

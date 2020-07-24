@@ -1,9 +1,11 @@
+//shows places that user plans to visit
+
 import 'package:feety/Screens/locations.dart';
 import 'package:flutter/material.dart';
-//import 'package:search_widget/search_widget.dart';
 
-class PlaceListWidget extends StatelessWidget {
-  PlaceListWidget({Key key}) : super(key: key);
+
+class PlannedListWidget extends StatelessWidget {
+  PlannedListWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

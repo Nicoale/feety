@@ -1,8 +1,24 @@
-// import "package:vector_math/vector_math.dart";
-// import 'package:flutter/material.dart';
+// contains form for profile setup
 
-// import "package:bezier/bezier.dart";
+import 'package:flutter/material.dart';
 
+
+class ProfileEntryWidget extends StatefulWidget {
+  @override
+  _ProfileEntryWidgetState createState() => _ProfileEntryWidgetState();
+}
+
+class _ProfileEntryWidgetState extends State<ProfileEntryWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Your Profile')
+      ),
+      body: Text('This is my profile'),
+    );
+  }
+}
 
 // class ProfileEntryForm extends StatefulWidget {
 //   @override
