@@ -1,9 +1,13 @@
 //contains code fr the splash screen.
+
 import 'package:feety/Screens/search_location.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(home: new MyApp()));
+  runApp(
+    new MaterialApp(
+      home:
+     new MyApp()));
 }
 
 class MyApp extends StatefulWidget {
